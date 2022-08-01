@@ -1,10 +1,10 @@
-﻿using System;
-
-namespace Proyecto_de_archivos
+﻿namespace Proyecto_de_archivos
 {
-    class Program
+    using System;
+
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
         }
