@@ -1,3 +1,3 @@
 # Herramienta de .net
 
-La estamos construeyendo
+Realizando un proyecto con github y C#
