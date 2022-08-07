@@ -2,15 +2,24 @@
 {
     using System;
     using System.IO;
+    using McMaster.Extensions.CommandLineUtils;
+
+    [Command("Comando_de_archivos")]
+    [VersionOptionFromMember("--version", MemberName= nameof(ProyectoVersion))]
 
     public class Program
     {
-        public static void Main(string[] args)
+        public string ProyectoVersion { get; } = "0.0.0";
+
+        public static int Main(string[] args)
         {
-            var argumentos = string.Join("; ", args);
-            var directorioactual = Directory.GetCurrentDirectory();
-            Console.WriteLine(argumentos);
-            Console.WriteLine($"Me estoy ejecutando en: {directorioactual}");
+            return CommandLineApplication.Execute<Program>(args);
+        }
+
+        public int OnExecute(CommandLineApplication app)
+        {
+            app.ShowHelp();
+            return 0;
         }
     }
 }
