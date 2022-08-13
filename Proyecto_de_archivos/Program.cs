@@ -1,11 +1,12 @@
 ﻿namespace Proyecto_de_archivos
-{
-    using System;
-    using System.IO;
+{    
+    using comands;
     using McMaster.Extensions.CommandLineUtils;
+    
 
     [Command("Comando_de_archivos")]
     [VersionOptionFromMember("--version", MemberName= nameof(ProyectoVersion))]
+    [Subcommand(typeof(BuildComand))]
 
     public class Program
     {
