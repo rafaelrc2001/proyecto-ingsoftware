@@ -1,8 +1,8 @@
 ﻿namespace Proyecto_de_archivos
-{    
-    using comands;
+{
+    using Comands;
     using McMaster.Extensions.CommandLineUtils;
-    
+    using Microsoft.Extensions.DependencyInjection;
 
     [Command("Comando_de_archivos")]
     [VersionOptionFromMember("--version", MemberName= nameof(ProyectoVersion))]
@@ -14,7 +14,16 @@
 
         public static int Main(string[] args)
         {
-            return CommandLineApplication.Execute<Program>(args);
+            var services = new ServiceCollection()
+                .AddSingleton<IConsole>(PhysicalConsole.Singleton)
+                .BuildServiceProvider();
+
+            var app = new CommandLineApplication<Program>();
+            app.Conventions
+                .UseDefaultConventions()
+                .UseConstructorInjection(services);
+
+            return app.Execute(args);
         }
 
         public int OnExecute(CommandLineApplication app)
