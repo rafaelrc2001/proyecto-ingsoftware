@@ -1,4 +1,3 @@
-
 namespace Comands
 {
     using McMaster.Extensions.CommandLineUtils;
