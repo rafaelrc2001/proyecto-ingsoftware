@@ -2,6 +2,7 @@ using Comands;
 using System;
 using Xunit;
 using TestConsole.utils;
+using Shouldly;
 
 namespace proyecto_de_archivos.Test
 {
@@ -10,14 +11,19 @@ namespace proyecto_de_archivos.Test
         [Fact]
         public void TestWritteConsole()
         {
+            // setup
             var testConsole = new Testconsole();
             var buildCommand = new BuildComand(testConsole);
 
+            // Actbuild
             buildCommand.OnExecute();
 
             string writtenText = testConsole.GetWrittenContent();
 
-            Assert.Equal("You execute the build comand\r\n",writtenText);
+            // Build comand asser
+            writtenText.ShouldBe("You execute the build comand\r\n");
+           
+
         }
     }
 }
