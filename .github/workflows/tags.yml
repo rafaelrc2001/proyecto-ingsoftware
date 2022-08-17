@@ -1,6 +1,9 @@
-name: Mi primer pipeline
+name: tagging pipeline
 
-on: [push, pull_request] 
+on:
+  push:
+    tags:
+      - 'v*'
 
 jobs:
   main:
