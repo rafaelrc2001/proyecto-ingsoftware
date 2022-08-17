@@ -1,4 +1,4 @@
-﻿namespace Proyecto_de_archivos
+namespace Proyecto_de_archivos
 {
     using Comands;
     using McMaster.Extensions.CommandLineUtils;
@@ -10,7 +10,7 @@
 
     public class Program
     {
-        public string ProyectoVersion { get; } = "0.0.0";
+        public string ProyectoVersion { get; } = "0.0.1";
 
         public static int Main(string[] args)
         {
