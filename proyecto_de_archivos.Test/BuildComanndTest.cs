@@ -21,7 +21,7 @@ namespace proyecto_de_archivos.Test
             string writtenText = testConsole.GetWrittenContent();
 
             // Build comand asser
-            writtenText.ShouldBe("This is a beta version \r \n");
+            writtenText.ShouldBe("This is a beta version.\r\n");
            
 
         }
