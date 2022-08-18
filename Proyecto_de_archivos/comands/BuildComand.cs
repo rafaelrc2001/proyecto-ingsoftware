@@ -13,7 +13,7 @@ namespace Comands
 
         public int OnExecute()
         {
-            this.console.WriteLine("This is a beta version");
+            this.console.WriteLine("This is a beta version ");
             return 0;
         }
     }
