@@ -25,6 +25,7 @@ jobs:
       - name: Probar aplicación
         run: |
           dotnet test
+          
       - name: Empaquetar
         run: dotnet pack -c Release      
       
