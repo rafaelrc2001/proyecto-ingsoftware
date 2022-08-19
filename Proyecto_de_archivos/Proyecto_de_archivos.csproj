@@ -5,6 +5,27 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup>
+  <PackAsTool>true</PackAsTool>
+  <ToolCommandName>Proyecto_de_archivos-test</ToolCommandName>
+  <PackageOutputPath>./nupkg</PackageOutputPath>
+
+  <PackageId>Proyecto_de_archivos.tutorial</PackageId>
+  <AssemblyVersion>0.0.1</AssemblyVersion>
+  <Version>0.0.1</Version>
+
+  <Authors>Diego</Authors>
+  <Title>Proyecto de prueba</Title>
+  <PackageDescription>A static / un sitio estatico  </PackageDescription>
+  <Description>A static website generator / generador de sitios we</Description>
+  <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  <PackageProjectUrl>https://github.com/rafaelrc2001/proyecto-ingsoftware</PackageProjectUrl>
+  <RepositoryUrl>https://github.com/rafaelrc2001/proyecto-ingsoftware</RepositoryUrl>
+  <!-- <PackageIcon>icon.png</PackageIcon> -->
+  <PackageTags>static;static-website;website;website-generator;html;jekyll;hugo</PackageTags> 
+
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="McMaster.Extensions.CommandLineUtils" Version="4.0.1" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
