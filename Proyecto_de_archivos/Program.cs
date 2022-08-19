@@ -10,7 +10,7 @@ namespace Proyecto_de_archivos
 
     public class Program
     {
-        public string ProyectoVersion { get; } = "0.0.8";
+        public string ProyectoVersion { get; } = "0.0.9";
 
         public static int Main(string[] args)
         {
