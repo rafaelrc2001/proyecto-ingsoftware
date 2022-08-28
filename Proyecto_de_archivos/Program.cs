@@ -16,6 +16,7 @@ namespace Proyecto_de_archivos
         public static int Main(string[] args)
         {
             var services = new ServiceCollection()
+                .AddSingleton<IFileSystem, FileSystem>()
                 .AddSingleton<ISiteBuilder, SiteBuilder>()
                 .AddSingleton<IConsole>(PhysicalConsole.Singleton)
                 .BuildServiceProvider();
