@@ -3,6 +3,8 @@ using System;
 using Xunit;
 using TestConsole.utils;
 using Shouldly;
+using Moq;
+using Isite;
 
 namespace proyecto_de_archivos.Test
 {
@@ -13,16 +15,18 @@ namespace proyecto_de_archivos.Test
         {
             // setup
             var testConsole = new Testconsole();
-            var buildCommand = new BuildComand(testConsole);
+            var mockSiteBuilder = new Mock<ISiteBuilder>();
+            var inputPath ="./Luis_Rosales";
+            var outputPath= "./Ariel/";
+        
+            var buildCommand = new BuildCommand(testConsole, siteBuilder: mockSiteBuilder.Object);
+            buildCommand.InputPath = inputPath;
+            buildCommand.OutputPath = outputPath;
+            
 
             // Actbuild
             buildCommand.OnExecute();
-
-            string writtenText = testConsole.GetWrittenContent();
-
-            // Build comand asser
-            writtenText.ShouldBe("This is a beta version." + Environment.NewLine);
-           
+            mockSiteBuilder.Verify(sb => sb.Build(inputPath,outputPath), Times.Once);
 
         }
     }

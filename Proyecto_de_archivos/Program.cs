@@ -3,10 +3,11 @@ namespace Proyecto_de_archivos
     using Comands;
     using McMaster.Extensions.CommandLineUtils;
     using Microsoft.Extensions.DependencyInjection;
+    using Isite;
 
     [Command("Comando_de_archivos")]
     [VersionOptionFromMember("--version", MemberName= nameof(ProyectoVersion))]
-    [Subcommand(typeof(BuildComand))]
+    [Subcommand(typeof(BuildCommand))]
 
     public class Program
     {
@@ -15,6 +16,7 @@ namespace Proyecto_de_archivos
         public static int Main(string[] args)
         {
             var services = new ServiceCollection()
+                .AddSingleton<ISiteBuilder, SiteBuilder>()
                 .AddSingleton<IConsole>(PhysicalConsole.Singleton)
                 .BuildServiceProvider();
 
